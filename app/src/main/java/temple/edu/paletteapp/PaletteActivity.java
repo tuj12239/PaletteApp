@@ -26,6 +26,8 @@ public class PaletteActivity extends AppCompatActivity
                 "Purple", "Teal", "Aqua", "Maroon", "Olive", "Gray"};
         final PaletteAdapter paletteAdapter = new PaletteAdapter(colors);
 
+        final Intent paletteIntent = new Intent(this, CanvasActivity.class);
+
         if (paletteGridView != null)
         {
             paletteGridView.setAdapter(paletteAdapter);
@@ -33,6 +35,8 @@ public class PaletteActivity extends AppCompatActivity
             paletteGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    paletteIntent.putExtra("selectedColor", colors[position]);
+                    startActivity(paletteIntent);
                 }
             });
         }

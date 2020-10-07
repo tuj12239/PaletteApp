@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">PaletteApp</string>
-    <string name="act2_name">CanvasApp</string>
+    <string name="app_name">Palette Activity</string>
+    <string name="act2_name">Canvas Activity</string>
 </resources>
