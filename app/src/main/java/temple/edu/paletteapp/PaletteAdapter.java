@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 public class PaletteAdapter extends BaseAdapter
@@ -40,7 +41,8 @@ public class PaletteAdapter extends BaseAdapter
     {
         TextView colorOption = new TextView(parent.getContext());
         colorOption.setText(colors[position]);
-        colorOption.setTextSize(32);
+        colorOption.setTextSize(16);
+        colorOption.setHeight(256);
         Log.d("PaletteAdapter", (String)colorOption.getText());
 
         colorOption.setBackgroundColor(Color.parseColor(colors[position]));
