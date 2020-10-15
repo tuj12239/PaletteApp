@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,11 +20,12 @@ public class PaletteActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final Resources res = getResources();
+
         final ConstraintLayout paletteLayout = findViewById(R.id.paletteLayout);
         final GridView paletteGridView = findViewById(R.id.paletteGridView);
 
-        final String colors[] = {"White", "Red", "Blue", "Green", "Yellow", "Magenta",
-                "Purple", "Teal", "Aqua", "Maroon", "Olive", "Gray"};
+        final String colors[] = res.getStringArray(R.array.colors);
         final PaletteAdapter paletteAdapter = new PaletteAdapter(colors);
 
         final Intent paletteIntent = new Intent(this, CanvasActivity.class);

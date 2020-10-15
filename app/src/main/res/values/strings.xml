@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Palette Activity</string>
     <string name="act2_name">Canvas Activity</string>
+    <string name="instruction">Click a color below to launch the Canvas</string>
+    <string-array name="colors">
+        <item>White</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Magenta</item>
+        <item>Purple</item>
+        <item>Teal</item>
+        <item>Aqua</item>
+        <item>Maroon</item>
+        <item>Olive</item>
+        <item>Gray</item>
+    </string-array>
 </resources>
