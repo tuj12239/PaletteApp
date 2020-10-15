@@ -1,0 +1,19 @@
+<resources>
+<string name="app_name">Activité de la palette</string>
+<string name="act2_name">Activité de toile</string>
+<string name="instruction">Cliquez sur une couleur ci-dessous pour lancer le canevas</string>
+<string-array name="colors">
+    <item>Blanc</item>
+    <item>Rouge</item>
+    <item>Bleu</item>
+    <item>Vert</item>
+    <item>Jaune</item>
+    <item>Magenta</item>
+    <item>Violet</item>
+    <item>Sarcelle</item>
+    <item>Aqua</item>
+    <item>Bordeaux</item>
+    <item>Olive</item>
+    <item>Gris</item>
+</string-array>
+</resources>

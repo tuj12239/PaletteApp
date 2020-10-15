@@ -11,11 +11,13 @@ import android.widget.TextView;
 public class PaletteAdapter extends BaseAdapter
 {
     private String[] colors;
+    private String[] parseColorStrings;
 
-    public PaletteAdapter(String[] data)
+    public PaletteAdapter(String[] colors, String[] parseColors)
     {
         super();
-        colors = data;
+        this.colors = colors;
+        this.parseColorStrings = parseColors;
     }
 
     @Override
@@ -45,7 +47,7 @@ public class PaletteAdapter extends BaseAdapter
         colorOption.setHeight(256);
         Log.d("PaletteAdapter", (String)colorOption.getText());
 
-        colorOption.setBackgroundColor(Color.parseColor(colors[position]));
+        colorOption.setBackgroundColor(Color.parseColor(parseColorStrings[position]));
 
         return colorOption;
     }

@@ -18,8 +18,9 @@ public class CanvasActivity extends AppCompatActivity {
         final ConstraintLayout canvasLayout = findViewById(R.id.canvasLayout);
 
         String chosenColor = this.getIntent().getStringExtra("selectedColor");
+        String parseColor = this.getIntent().getStringExtra("parseColor");
 
         textView.setText(chosenColor);
-        canvasLayout.setBackgroundColor(Color.parseColor(chosenColor));
+        canvasLayout.setBackgroundColor(Color.parseColor(parseColor));
     }
 }

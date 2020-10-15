@@ -26,7 +26,12 @@ public class PaletteActivity extends AppCompatActivity
         final GridView paletteGridView = findViewById(R.id.paletteGridView);
 
         final String colors[] = res.getStringArray(R.array.colors);
-        final PaletteAdapter paletteAdapter = new PaletteAdapter(colors);
+
+        //This is only used for the parseColor method
+        //These are not visible to the user.
+        final String parseColorStrings[] = {"White", "Red", "Blue", "Green", "Yellow",
+            "Magenta", "Purple", "Teal", "Aqua", "Maroon", "Olive", "Gray"};
+        final PaletteAdapter paletteAdapter = new PaletteAdapter(colors, parseColorStrings);
 
         final Intent paletteIntent = new Intent(this, CanvasActivity.class);
 
@@ -38,6 +43,7 @@ public class PaletteActivity extends AppCompatActivity
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     paletteIntent.putExtra("selectedColor", colors[position]);
+                    paletteIntent.putExtra("parseColor", parseColorStrings[position]);
                     startActivity(paletteIntent);
                 }
             });
