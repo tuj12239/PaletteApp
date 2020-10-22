@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class CanvasFragment extends Fragment {
+
+    TextView textView;
+    ConstraintLayout canvasLayout;
 
     public CanvasFragment() {}
 
@@ -19,8 +23,8 @@ public class CanvasFragment extends Fragment {
 
         View canvasView = inflater.inflate(R.layout.fragment_canvas, container, false);
 
-        final TextView textView = canvasView.findViewById(R.id.colorName);
-        final ConstraintLayout canvasLayout = canvasView.findViewById(R.id.canvasLayout);
+        textView = canvasView.findViewById(R.id.colorName);
+        canvasLayout = canvasView.findViewById(R.id.canvasLayout);
 
         String chosenColor = ((CanvasColorInterface)getActivity()).getChosenColor();
         String parseColor = ((CanvasColorInterface)getActivity()).getParseColor();
@@ -29,6 +33,11 @@ public class CanvasFragment extends Fragment {
         canvasLayout.setBackgroundColor(Color.parseColor(parseColor));
 
         return canvasView;
+    }
+
+    public void updateBackgroundColor(String chosenColor, String parseColor) {
+        textView.setText(chosenColor);
+        canvasLayout.setBackgroundColor(Color.parseColor(parseColor));
     }
 
     interface CanvasColorInterface {
