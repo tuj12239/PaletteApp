@@ -1,10 +1,8 @@
 package temple.edu.paletteapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,7 +18,7 @@ public class PaletteFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View paletteView = inflater.inflate(R.layout.fragment_main, container, false);
+        View paletteView = inflater.inflate(R.layout.fragment_palette, container, false);
 
         final Resources res = getResources();
 
@@ -42,11 +40,17 @@ public class PaletteFragment extends Fragment
             paletteGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                    ((PaletteColorInterface)getActivity()).setChosenColor(colors[position]);
+                    ((PaletteColorInterface)getActivity()).setParseColor(parseColorStrings[position]);
                 }
             });
         }
 
         return paletteView;
+    }
+
+    interface PaletteColorInterface {
+        void setChosenColor(String color);
+        void setParseColor(String color);
     }
 }

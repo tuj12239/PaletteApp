@@ -22,8 +22,8 @@ public class CanvasFragment extends Fragment {
         final TextView textView = canvasView.findViewById(R.id.colorName);
         final ConstraintLayout canvasLayout = canvasView.findViewById(R.id.canvasLayout);
 
-        String chosenColor = this.getIntent().getStringExtra("selectedColor");
-        String parseColor = this.getIntent().getStringExtra("parseColor");
+        String chosenColor = ((CanvasColorInterface)getActivity()).getChosenColor();
+        String parseColor = ((CanvasColorInterface)getActivity()).getParseColor();
 
         textView.setText(chosenColor);
         canvasLayout.setBackgroundColor(Color.parseColor(parseColor));
@@ -32,6 +32,7 @@ public class CanvasFragment extends Fragment {
     }
 
     interface CanvasColorInterface {
-        String[] getCanvasColors();
+        String getChosenColor();
+        String getParseColor();
     }
 }
